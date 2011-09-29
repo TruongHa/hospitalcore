@@ -7,11 +7,10 @@ import org.openmrs.Encounter;
 import org.openmrs.EncounterType;
 import org.openmrs.Obs;
 import org.openmrs.Patient;
-import org.openmrs.Person;
 import org.openmrs.PersonAttribute;
-import org.openmrs.PersonAttributeType;
 import org.openmrs.api.db.DAOException;
 import org.openmrs.module.hospitalcore.concept.ConceptModel;
+import org.openmrs.module.hospitalcore.model.CoreForm;
 
 public interface HospitalCoreDAO {
 
@@ -48,4 +47,37 @@ public interface HospitalCoreDAO {
 	 * @return
 	 */
 	public Encounter getLastVisitEncounter(Patient patient, List<EncounterType> types);
+	
+	/**
+	 * Save core form
+	 * @param form
+	 * @return
+	 */
+	public CoreForm saveCoreForm(CoreForm form);
+
+	/**
+	 * Get core form by id
+	 * @param id
+	 * @return
+	 */
+	public CoreForm getCoreForm(Integer id);
+
+	/**
+	 * Get core forms by name
+	 * @param conceptName
+	 * @return
+	 */
+	public List<CoreForm> getCoreForms(String conceptName);
+
+	/**
+	 * Get all core forms
+	 * @return
+	 */
+	public List<CoreForm> getCoreForms();
+
+	/**
+	 * Delete core form
+	 * @param form
+	 */
+	public void deleteCoreForm(CoreForm form);
 }

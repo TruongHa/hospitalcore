@@ -13,13 +13,12 @@ import org.openmrs.Encounter;
 import org.openmrs.EncounterType;
 import org.openmrs.Obs;
 import org.openmrs.Patient;
-import org.openmrs.Person;
 import org.openmrs.PersonAttribute;
-import org.openmrs.PersonAttributeType;
 import org.openmrs.User;
 import org.openmrs.api.APIException;
 import org.openmrs.api.ConceptService;
 import org.openmrs.api.OpenmrsService;
+import org.openmrs.module.hospitalcore.model.CoreForm;
 import org.springframework.transaction.annotation.Transactional;
 import org.xml.sax.SAXException;
 
@@ -136,5 +135,38 @@ public interface HospitalCoreService extends OpenmrsService {
 	 */
 	public Encounter getLastVisitEncounter(Patient patient,
 			List<EncounterType> types);
+	
+	/**
+	 * Save core form
+	 * @param form
+	 * @return
+	 */
+	public CoreForm saveCoreForm(CoreForm form);
+
+	/**
+	 * Get core form by id
+	 * @param id
+	 * @return
+	 */
+	public CoreForm getCoreForm(Integer id);
+
+	/**
+	 * Get core forms by name
+	 * @param conceptName
+	 * @return
+	 */
+	public List<CoreForm> getCoreForms(String conceptName);
+
+	/**
+	 * Get all core forms
+	 * @return
+	 */
+	public List<CoreForm> getCoreForms();
+
+	/**
+	 * Delete core form
+	 * @param form
+	 */
+	public void deleteCoreForm(CoreForm form);
 
 }

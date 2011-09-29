@@ -146,4 +146,25 @@
 			ALTER TABLE opd_patient_queue_log ADD encounter_id integer default 0;
 		</sql>
 	</diff>	
+	<diff>
+		<version>1.6</version>
+		<author>Truong Ha</author>
+		<date>Sep 29th 2011</date>
+		<description>
+			Add table core form
+		</description>
+		<sql>			
+			CREATE TABLE IF NOT EXISTS `core_form` (
+			  `core_form_id` int(11) NOT NULL AUTO_INCREMENT,
+			  `name` varchar(120) DEFAULT NULL,
+			  `description` varchar(300) NOT NULL DEFAULT '',
+			  `content` varchar(20480) NOT NULL DEFAULT '',			  
+			  `created_on` datetime DEFAULT NULL,
+			  `created_by` int(11) DEFAULT NULL,
+			  PRIMARY KEY (`core_form_id`)
+			) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+		</sql>
+	</diff>	
+	
+	
 </sqldiff>

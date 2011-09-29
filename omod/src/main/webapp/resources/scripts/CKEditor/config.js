@@ -7,7 +7,7 @@ CKEDITOR.editorConfig = function( config )
 {
 	config.extraPlugins = 'formtextbox,formradio,formselection,formcontent,forminfo';
 	url = document.location.href;
-	if(url.indexOf("radiology/editForm.form")>=0){
+	if(url.indexOf("module=radiology/editForm.form")>=0){
 		config.toolbar =[
 			[ 'Source','-','Save','NewPage','DocProps','Preview','Print','-','Templates' ],
 			[ 'Cut','Copy','Paste','PasteText','PasteFromWord','-','Undo','Redo' ],
@@ -24,7 +24,7 @@ CKEDITOR.editorConfig = function( config )
 			'/',
 			['formtextbox', 'formradio', 'formselection']
 		];
-	} else if(url.indexOf("radiology/editTemplate.form")>=0) {
+	} else if(url.indexOf("module=radiology/editTemplate.form")>=0) {
 		config.toolbar =[
 			[ 'Source','-','Save','NewPage','DocProps','Preview','Print','-','Templates' ],
 			[ 'Cut','Copy','Paste','PasteText','PasteFromWord','-','Undo','Redo' ],

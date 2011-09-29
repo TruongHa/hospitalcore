@@ -36,9 +36,7 @@ import org.openmrs.GlobalProperty;
 import org.openmrs.Location;
 import org.openmrs.Obs;
 import org.openmrs.Patient;
-import org.openmrs.Person;
 import org.openmrs.PersonAttribute;
-import org.openmrs.PersonAttributeType;
 import org.openmrs.User;
 import org.openmrs.api.APIException;
 import org.openmrs.api.ConceptService;
@@ -49,6 +47,7 @@ import org.openmrs.module.hospitalcore.concept.ConceptModel;
 import org.openmrs.module.hospitalcore.concept.Mapping;
 import org.openmrs.module.hospitalcore.concept.Synonym;
 import org.openmrs.module.hospitalcore.db.HospitalCoreDAO;
+import org.openmrs.module.hospitalcore.model.CoreForm;
 import org.openmrs.module.hospitalcore.util.HospitalCoreConstants;
 import org.w3c.dom.Document;
 import org.w3c.dom.NamedNodeMap;
@@ -655,5 +654,53 @@ public class HospitalCoreServiceImpl extends BaseOpenmrsService implements
 	public Encounter getLastVisitEncounter(Patient patient,
 			List<EncounterType> types) {
 		return dao.getLastVisitEncounter(patient, types);
+	}
+
+	/**
+	 * Save core form
+	 * 
+	 * @param form
+	 * @return
+	 */
+	public CoreForm saveCoreForm(CoreForm form) {
+		return dao.saveCoreForm(form);
+	}
+
+	/**
+	 * Get core form by id
+	 * 
+	 * @param id
+	 * @return
+	 */
+	public CoreForm getCoreForm(Integer id) {
+		return dao.getCoreForm(id);
+	}
+
+	/**
+	 * Get core forms by name
+	 * 
+	 * @param conceptName
+	 * @return
+	 */
+	public List<CoreForm> getCoreForms(String conceptName) {
+		return dao.getCoreForms(conceptName);
+	}
+
+	/**
+	 * Get all core forms
+	 * 
+	 * @return
+	 */
+	public List<CoreForm> getCoreForms(){
+		return dao.getCoreForms();
+	}
+
+	/**
+	 * Delete core form
+	 * 
+	 * @param form
+	 */
+	public void deleteCoreForm(CoreForm form){
+		dao.deleteCoreForm(form);
 	}
 }
